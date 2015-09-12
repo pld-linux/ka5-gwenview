@@ -1,4 +1,3 @@
-# TODO, fix build with ka5-libkdcraw-devel and ka5-libkipi-devel (missing cmake files)
 %define		kdeappsver	15.08.0
 %define		qtver		5.3.2
 %define		kaname		gwenview
@@ -15,12 +14,14 @@ BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-tools
-BuildRequires:	ka5-libkdcraw-devel
-BuildRequires:	ka5-libkipi-devel
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
 BuildRequires:	kf5-kactivities-devel
+# unreleased/only in git
+#BuildRequires:	kf5-kdcraw-devel
 BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kio-devel
+# unreleased/only in git
+#BuildRequires:	kf5-kipi-devel
 BuildRequires:	lcms2-devel
 BuildRequires:	libjpeg-turbo-devel
 BuildRequires:	libpng-devel
