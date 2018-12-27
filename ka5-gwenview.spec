@@ -1,14 +1,14 @@
-%define		kdeappsver	17.08.2
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		gwenview
 Summary:	Simple image viewer
 Name:		ka5-%{kaname}
-Version:	17.08.2
+Version:	18.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	2a25555227118ff394fb0c782b1d5b92
+# Source0-md5:	fc5d489f79e1f666ca8cadcca9657c65
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -16,7 +16,7 @@ BuildRequires:	exiv2-devel
 BuildRequires:	gettext-tools
 BuildRequires:	ka5-libkdcraw-devel
 BuildRequires:	ka5-libkipi-devel
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
 BuildRequires:	kf5-kactivities-devel
 BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kio-devel
@@ -78,9 +78,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/gvpart.desktop
 %dir %{_datadir}/kxmlgui5/gvpart
 %{_datadir}/kxmlgui5/gvpart/gvpart.rc
-%dir %{_datadir}/kxmlgui5/gwenview
-%{_datadir}/kxmlgui5/gwenview/gwenviewui.rc
+#%%dir %{_datadir}/kxmlgui5/gwenview
+#%%{_datadir}/kxmlgui5/gwenview/gwenviewui.rc
 %attr(755,root,root) %{_bindir}/gwenview_importer
 %{_datadir}/metainfo/org.kde.gwenview.appdata.xml
 %{_datadir}/solid/actions/gwenview_importer.desktop
 %{_datadir}/solid/actions/gwenview_importer_camera.desktop
+%{_datadir}/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
+%{_datadir}/kconf_update/gwenview.upd
