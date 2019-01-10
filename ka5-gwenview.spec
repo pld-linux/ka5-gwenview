@@ -84,5 +84,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.gwenview.appdata.xml
 %{_datadir}/solid/actions/gwenview_importer.desktop
 %{_datadir}/solid/actions/gwenview_importer_camera.desktop
-%{_datadir}/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
+%attr(755,root,root) %{_datadir}/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
 %{_datadir}/kconf_update/gwenview.upd
