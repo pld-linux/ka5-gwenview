@@ -10,13 +10,16 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	ab67e12f3e9cc851464741bcf8a0cd74
+Patch0:		%{name}-exiv2.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	cfitsio-devel
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-tools
 BuildRequires:	ka5-libkdcraw-devel >= %{kdeappsver}
 BuildRequires:	ka5-libkipi-devel >= %{kdeappsver}
+BuildRequires:	kf5-baloo-devel >= %{kframever}
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf5-kactivities-devel >= %{kframever}
 BuildRequires:	kf5-kdelibs4support-devel >= %{kframever}
@@ -44,6 +47,7 @@ supports.
 
 %prep
 %setup -q -n %{kaname}-%{version}
+%patch0
 
 %build
 install -d build
