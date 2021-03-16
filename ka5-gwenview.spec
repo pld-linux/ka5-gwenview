@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		gwenview
 Summary:	Simple image viewer
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ab67e12f3e9cc851464741bcf8a0cd74
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	310f38c69ec2ce9199d8f0bb07585b1a
 Patch0:		%{name}-exiv2.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -47,7 +47,7 @@ supports.
 
 %prep
 %setup -q -n %{kaname}-%{version}
-%patch0
+#%patch0
 
 %build
 install -d build
@@ -65,6 +65,8 @@ rm -rf $RPM_BUILD_ROOT
 
 rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/sr
 %find_lang %{kaname} --all-name --with-kde
+sed -i -e 's#/usr/bin/env perl#/usr/bin/perl#' \
+	$RPM_BUILD_ROOT%{_datadir}/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -77,7 +79,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gwenview
 %attr(755,root,root) %{_libdir}/libgwenviewlib.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libgwenviewlib.so.5
-%attr(755,root,root)        %{_libdir}/qt5/plugins/gvpart.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/parts/gvpart.so
+%{_datadir}/qlogging-categories5/gwenview.categories
 %{_desktopdir}/org.kde.gwenview.desktop
 %{_datadir}/gwenview
 %{_iconsdir}/hicolor/*/actions/document-share.png
