@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		gwenview
 Summary:	Simple image viewer
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	310f38c69ec2ce9199d8f0bb07585b1a
+# Source0-md5:	eceaaf5affdf12681cc9477f08e1eae5
 Patch0:		%{name}-exiv2.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -78,22 +78,18 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gwenview
 %attr(755,root,root) %{_libdir}/libgwenviewlib.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libgwenviewlib.so.5
+%ghost %{_libdir}/libgwenviewlib.so.5
 %attr(755,root,root) %{_libdir}/qt5/plugins/kf5/parts/gvpart.so
 %{_datadir}/qlogging-categories5/gwenview.categories
 %{_desktopdir}/org.kde.gwenview.desktop
 %{_datadir}/gwenview
 %{_iconsdir}/hicolor/*/actions/document-share.png
 %{_iconsdir}/hicolor/*/apps/gwenview.png
-%{_datadir}/kservices5/ServiceMenus/slideshow.desktop
 %{_datadir}/kservices5/gvpart.desktop
-%dir %{_datadir}/kxmlgui5/gvpart
-%{_datadir}/kxmlgui5/gvpart/gvpart.rc
-#%%dir %{_datadir}/kxmlgui5/gwenview
-#%%{_datadir}/kxmlgui5/gwenview/gwenviewui.rc
 %attr(755,root,root) %{_bindir}/gwenview_importer
 %{_datadir}/metainfo/org.kde.gwenview.appdata.xml
 %{_datadir}/solid/actions/gwenview_importer.desktop
 %{_datadir}/solid/actions/gwenview_importer_camera.desktop
 %attr(755,root,root) %{_datadir}/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
 %{_datadir}/kconf_update/gwenview.upd
+%{_libdir}/qt5/plugins/kf5/kfileitemaction/slideshowfileitemaction.so
