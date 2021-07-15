@@ -45,6 +45,14 @@ easy navigation in your file hierarchy. Image loading is done by the
 Qt library, so it supports all image formats your Qt installation
 supports.
 
+%description -l pl.UTF-8
+Gwenview to przeglądarka obrazków dla KDE.
+
+Wyświetla ona drzewiastą strukturę folderów i okno z listą plików do
+łatwego nawigowania po hieracrchi plików. Ładowanie obrazków jest
+wykonywane przez bibliotę Qt, więc obsługiwane są wszystkie formaty
+obrazów, które wspiera Qt.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 #%patch0
