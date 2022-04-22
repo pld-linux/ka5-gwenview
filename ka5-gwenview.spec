@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		gwenview
 Summary:	Simple image viewer
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ea23f6ff46018d6a4f90c39f43e431fd
+# Source0-md5:	258a7b1e080f098573324364452cfd97
 Patch0:		%{name}-exiv2.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -51,10 +51,10 @@ supports.
 %description -l pl.UTF-8
 Gwenview to przeglądarka obrazków dla KDE.
 
-Wyświetla ona drzewiastą strukturę folderów i okno z listą plików do
-łatwego nawigowania po hieracrchi plików. Ładowanie obrazków jest
-wykonywane przez bibliotę Qt, więc obsługiwane są wszystkie formaty
-obrazów, które wspiera Qt.
+Wyświetla ona drzewiastą strukturę folderów i okno z listą
+plików do łatwego nawigowania po hieracrchi plików. Ładowanie
+obrazków jest wykonywane przez bibliotę Qt, więc obsługiwane są
+wszystkie formaty obrazów, które wspiera Qt.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -110,3 +110,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
 %{_datadir}/kconf_update/gwenview.upd
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/slideshowfileitemaction.so
+%{_desktopdir}/org.kde.gwenview_importer.desktop
