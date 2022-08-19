@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.3
+%define		kdeappsver	22.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		gwenview
 Summary:	Simple image viewer
 Name:		ka5-%{kaname}
-Version:	22.04.3
+Version:	22.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	3cea023d6765793c2c5270078d8db8e6
+# Source0-md5:	95fc52fbf1ac6b8efc82ce54aab3f4c6
 Patch0:		%{name}-exiv2.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -20,6 +20,7 @@ BuildRequires:	cfitsio-devel
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-tools
+BuildRequires:	kImageAnnotator-devel
 BuildRequires:	ka5-libkdcraw-devel >= %{kdeappsver}
 BuildRequires:	ka5-libkipi-devel >= %{kdeappsver}
 BuildRequires:	kf5-baloo-devel >= %{kframever}
