@@ -74,7 +74,7 @@ Dane dla %{kaname}.
 
 %prep
 %setup -q -n %{kaname}-%{version}
-#%patch0
+#%%patch0
 
 %build
 %cmake \
