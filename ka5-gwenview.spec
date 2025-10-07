@@ -21,8 +21,8 @@ BuildRequires:	cfitsio-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-tools
-BuildRequires:	kColorPicker-devel
-BuildRequires:	kImageAnnotator-devel
+BuildRequires:	kColorPicker-qt5-devel
+BuildRequires:	kImageAnnotator-qt5-devel
 BuildRequires:	ka5-libkdcraw-devel >= %{kdeappsver}
 BuildRequires:	ka5-libkipi-devel >= %{kdeappsver}
 BuildRequires:	kf5-baloo-devel >= %{kframever}
